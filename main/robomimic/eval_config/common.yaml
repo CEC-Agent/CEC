@@ -1,0 +1,37 @@
+defaults:
+  - _self_
+
+ckpt_path: ???
+data_path: ???
+task: ???
+seed: 3074
+
+evaluator:
+  _partial_: true
+  _target_: cec.evaluator.ShmemCrossEpisodicVecEvaluator
+  mode: image
+  n_eval_episodes: 5
+  vec_env_size: 10
+  deterministic_eval: true
+
+data_module:
+  _target_: cec.data.RoboMimicDataModule
+  task: ${task}
+  data_parent_dir: ${data_path}
+  ctx_len: 200
+  batch_size: 1
+  val_batch_size: 1
+  dataloader_num_workers: 8
+  n_episodes_per_level: [1, 5]
+  seed: ${seed}
+  shuffle: true
+  cache_in_mem: false
+  precision: 32
+
+
+hydra:
+  job:
+    chdir: true
+  run:
+    dir: "."
+  output_subdir: null

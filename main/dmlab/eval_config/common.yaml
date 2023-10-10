@@ -1,0 +1,17 @@
+defaults:
+  - _self_
+  - method: ???
+  - task: ???
+
+ckpt_path: ???
+
+evaluator:
+  seed: 9999
+  deterministic: true
+
+hydra:
+  job:
+    chdir: true
+  run:
+    dir: "."
+  output_subdir: null

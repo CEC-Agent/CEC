@@ -1,0 +1,30 @@
+# @package _global_
+
+module:
+  policy:
+    _target_: cec.policy.CECPolicy
+    feature_encoders:
+      partial_rgb:
+        _target_: cec.nn.feature.rgb.RGBEmb
+        convnet_n_blocks: 1
+        convnet_chans: [ 16, 32, 32 ]
+        convnet_output_size: 256
+        hidden_size: 256
+        img_shape: [3, 72, 96]
+      action:
+        _target_: cec.nn.feature.action.ActionOneHotEmb
+        embed_dim: 32
+        num_classes: 15
+    action_space:
+      _target_: gym.spaces.Discrete
+      n: 15
+    hidden_size: 256
+    use_pointwise_layer: true
+    pointwise_ratio: 4
+    pointwise_use_activation: true
+    attention_heads: 8
+    n_transformer_blocks: 4
+    pi_head_kwargs:
+      hidden_dim: 128
+      hidden_depth: 2
+    subsample_every: 1

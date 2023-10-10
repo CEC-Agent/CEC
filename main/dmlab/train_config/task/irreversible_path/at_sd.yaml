@@ -1,0 +1,13 @@
+# @package _global_
+
+data_module:
+  ctx_len: -1
+  batch_size: 1
+  val_batch_size: 1
+  task: dmlab_irreversible_path
+  train_levels: [9]
+  num_trajs: 400
+  n_episodes_per_level: [1, 3]
+  shuffle: true
+  even_spacing: false
+  adapted: false

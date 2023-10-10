@@ -1,0 +1,6 @@
+# @package _global_
+evaluator:
+  task: dmlab_irreversible_path
+  vec_env_size: 80
+  n_eval_per_level: 2000
+  difficulty_levels: [9]

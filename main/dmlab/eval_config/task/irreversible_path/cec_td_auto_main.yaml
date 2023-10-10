@@ -1,0 +1,9 @@
+# @package _global_
+evaluator:
+  task: dmlab_irreversible_path
+  n_eval_per_level: 20
+  difficulty_levels: [1,3,5,7,9]
+  n_episodes_per_level: 3
+  use_auto_curriculum: true
+  auto_curriculum_consecutive_success: 2
+  auto_curriculum_n_episodes_per_level: 100

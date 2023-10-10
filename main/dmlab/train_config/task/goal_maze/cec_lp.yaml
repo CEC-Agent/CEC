@@ -1,0 +1,18 @@
+# @package _global_
+
+module:
+  policy:
+    timesteps: 500
+    attention_memory_size: 1000
+
+data_module:
+  ctx_len: 500
+  batch_size: 4
+  val_batch_size: 4
+  task: dmlab_goal_large
+  train_levels: [20]
+  num_trajs: 300
+  n_episodes_per_level: 9
+  shuffle: false
+  even_spacing: true
+  adapted: false

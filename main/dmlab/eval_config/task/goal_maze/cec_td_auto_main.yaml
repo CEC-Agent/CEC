@@ -1,0 +1,8 @@
+# @package _global_
+evaluator:
+  task: dmlab_goal_large
+  n_eval_per_level: 20
+  difficulty_levels: [5,10,15,20]
+  n_episodes_per_level: 100
+  use_auto_curriculum: true
+  auto_curriculum_n_episodes_per_level: 100

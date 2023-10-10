@@ -1,0 +1,13 @@
+# @package _global_
+
+data_module:
+  ctx_len: -1
+  batch_size: 16
+  val_batch_size: 16
+  task: dmlab_watermaze
+  train_levels: [150,300,450]
+  num_trajs: 100
+  n_episodes_per_level: 1
+  shuffle: false
+  even_spacing: true
+  adapted: true

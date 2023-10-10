@@ -1,0 +1,9 @@
+# @package _global_
+evaluator:
+  task: dmlab_goal_large
+  vec_env_size: 80
+  n_eval_per_level: 2000
+  difficulty_levels: [20]
+  n_episodes_per_level: 1
+  auto_curriculum_n_episodes_per_level: 1
+  action_repeat: 2

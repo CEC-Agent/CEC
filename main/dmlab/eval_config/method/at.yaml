@@ -1,0 +1,5 @@
+# @package _global_
+evaluator:
+  _target_: cec.evaluator.dmlab.DMLabATEvaluator
+  seed: 9999
+  deterministic: true

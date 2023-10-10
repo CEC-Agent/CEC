@@ -1,0 +1,16 @@
+# @package _global_
+
+module:
+  policy:
+    timesteps: 400
+    attention_memory_size: 800
+
+data_module:
+  ctx_len: 400
+  batch_size: 4
+  val_batch_size: 4
+  task: dmlab_watermaze
+  train_levels: [150,300,450]
+  num_trajs: 100
+  n_episodes_per_level: [1,5]
+  adapted: true

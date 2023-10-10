@@ -1,0 +1,47 @@
+defaults:
+  - _self_
+  - method: ???
+  - task: ???
+
+gpus: ???
+data_path: ???
+seed: 3074
+
+trainer:
+  _target_: pytorch_lightning.Trainer
+  gpus: ${gpus}
+  precision: 16
+  benchmark: true
+  num_sanity_val_steps: 2
+  max_epochs: 999
+  val_check_interval: 1.0
+  gradient_clip_val: 0.5
+
+module:
+  _target_: cec.module.DMLabImitationModule
+  policy: ???
+  lr: 5e-4
+  lr_warmup_steps: 1000
+  lr_cosine_steps: 100000
+  lr_cosine_min: 1e-5
+  weight_decay: 0.0
+
+data_module:
+  _target_: cec.data.DMLabDataModule
+  path: ${data_path}
+  dataloader_num_workers: 8
+  train_portion: 0.99999999
+  num_trajs: null
+  seed: ${seed}
+  train_action_repeat: null
+  shuffle: false
+  even_spacing: true
+  adapted: false
+
+
+hydra:
+  job:
+    chdir: true
+  run:
+    dir: "."
+  output_subdir: null

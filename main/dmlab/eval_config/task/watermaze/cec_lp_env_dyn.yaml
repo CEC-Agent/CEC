@@ -1,0 +1,7 @@
+# @package _global_
+evaluator:
+  task: dmlab_watermaze
+  n_eval_per_level: 20
+  difficulty_levels: [580]
+  n_episodes_per_level: 3
+  action_repeat: 2

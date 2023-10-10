@@ -1,0 +1,23 @@
+# @package _global_
+
+module:
+  policy:
+    _target_: cec.policy.ATPolicy
+    config:
+      _target_: transformers.DecisionTransformerConfig
+      act_dim: 15
+      hidden_size: 256
+      n_layer: 4
+      n_head: 8
+      n_positions: 12000
+      max_ep_len: 2400
+    img_encoder:
+      _target_: cec.nn.feature.rgb.RGBEmb
+      convnet_n_blocks: 1
+      convnet_chans: [ 16, 32, 32 ]
+      convnet_output_size: 256
+      hidden_size: 256
+      img_shape: [ 3, 72, 96 ]
+
+data_module:
+  at_or_dt: "at"
